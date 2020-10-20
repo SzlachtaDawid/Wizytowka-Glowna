@@ -11,36 +11,17 @@ const techSection = document.querySelector('section.techSection')
 const hobbySection = document.querySelector('section.hobbySection')
 const portfolioSection = document.querySelector('section.portfolioSection')
 const kontaktSection = document.querySelector('section.kontaktSection')
-let flag = false
 
 
-
+// zwiększanie sie menu po najechaniu
 window.addEventListener('mouseover', function (event) {
     let idTarget = event.target.id
-    if (idTarget === 'me') {
-        divContainter1.classList.add('addMe')
+    if (idTarget === 'me' || idTarget === 'tech' || idTarget === 'hobby' || idTarget === 'portfolio' || idTarget === 'kontakt' || idTarget === 'container1') {
+        divContainter1.style.width = '52%'
+        divContainter1.style.height = '52vh'
     } else {
-        divContainter1.classList.remove('addMe')
-    }
-    if (idTarget === 'tech') {
-        divContainter1.classList.add('addTech')
-    } else {
-        divContainter1.classList.remove('addTech')
-    }
-    if (idTarget === 'hobby') {
-        divContainter1.classList.add('addHobby')
-    } else {
-        divContainter1.classList.remove('addHobby')
-    }
-    if (idTarget === 'portfolio') {
-        divContainter1.classList.add('addPortfolio')
-    } else {
-        divContainter1.classList.remove('addPortfolio')
-    }
-    if (idTarget === 'kontakt') {
-        divContainter1.classList.add('addKontakt')
-    } else {
-        divContainter1.classList.remove('addKontakt')
+        divContainter1.style.width = '50%'
+        divContainter1.style.height = '50vh'
     }
 })
 
@@ -86,6 +67,7 @@ window.addEventListener('click', function (event) {
     }
 })
 
+// zanikanie wszystkich sekcji
 document.querySelector('div.ikonaMenu').addEventListener('click', () => {
     window.setTimeout(() => {
         document.querySelector('div.back').style.opacity = '0'
@@ -104,6 +86,7 @@ document.querySelector('div.ikonaMenu').addEventListener('click', () => {
 })
 
 window.addEventListener('scroll', () => {
+    // pojawianie się ikonki strzałki do przejścia na góre strony
     if (window.scrollY > meSection.offsetTop / 5) {
         document.querySelector('div.ikonaMenu i ').style.opacity = "100%"
     } else {
@@ -112,6 +95,8 @@ window.addEventListener('scroll', () => {
             slajder.style.backgroundImage = 'url(zdj/slajder/TłoSlajder.jpg)'
         }, 400);
     }
+
+    // zanikanie menu oraz pojawianie się przy scrollu
     if (window.scrollY > meSection.offsetTop - 99) {
         divContainter1.style.opacity = '0'
     } else if (window.scrollY < meSection.offsetTop - 100) {

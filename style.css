@@ -81,28 +81,6 @@ div.container1 {
     transition: 0.5s;
 }
 
-.addMe {
-    background-image: url(zdj/slajder/me.png);
-}
-
-.addTech {
-    background-image: url(zdj/slajder/tech.png);
-}
-
-.addHobby {
-    background-image: url(zdj/slajder/hobby.png);
-}
-
-.addPortfolio {
-    background-image: url(zdj/slajder/portfolio.png);
-    background-size: 45% !important;
-}
-
-.addKontakt {
-    background-image: url(zdj/slajder/kontakt.png);
-    background-size: 45% !important;
-}
-
 
 div.container1 div {
     position: relative;
